@@ -9,6 +9,6 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-racker = "0.1.2"
+racker = { git = "https://github.com/fadeoffical/racker.git", branch = "develop" }
 
 log = "0.4"
