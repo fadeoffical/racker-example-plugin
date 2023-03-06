@@ -964,9 +964,9 @@ dependencies = [
 
 [[package]]
 name = "racker"
-version = "0.1.0"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3a9b9e6d966f056dec17a21257eaa19ca553296d748e3e5fbb43443a01103bdd"
+checksum = "03bfbba0c1752c66903cdd4950682e57061751eac82a3931fe9576dc151539ac"
 dependencies = [
  "actix-web",
  "chrono",
@@ -995,8 +995,6 @@ version = "0.1.0"
 dependencies = [
  "log",
  "racker",
- "racker-common",
- "racker-plugin",
 ]
 
 [[package]]

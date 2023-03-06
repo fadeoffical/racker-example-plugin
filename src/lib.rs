@@ -1,5 +1,6 @@
-use racker_plugin::{PluginMeta, racker_plugin};
-use racker_plugin::Plugin;
+use racker::plugin::Plugin;
+use racker::plugin::PluginMeta;
+use racker::plugin::racker_plugin;
 
 racker_plugin!(ExamplePlugin, ExamplePlugin::new);
 
