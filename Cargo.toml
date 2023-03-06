@@ -9,3 +9,8 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
+racker = "0.1"
+racker-plugin = "0.1"
+racker-common = "0.1"
+
+log = "0.4"
