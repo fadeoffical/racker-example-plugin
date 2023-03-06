@@ -32,7 +32,11 @@ echo "OK"
 # Copy resources to the target directory
 echo -n "[racker]: Build::copy_resources... "
 cp -r "resources" "target/racker/resources"
-rm "target/racker/resources/plugin.json"
+
+file="target/racker/resources/plugin.json"
+if [ -f "$file" ]; then
+    rm "$file"
+fi
 echo "OK"
 
 # Copy the binary to the target directory

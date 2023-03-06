@@ -12,5 +12,15 @@
         "discord": "fade#1298"
       }
     }
+  ],
+  "binaries": [
+    {
+      "arch": "x86_64",
+      "platform": "linux",
+      "file": {
+        "path": "bin/linux/x86_64/racker-example-plugin.so",
+        "sha1": "f7066091423afec33d4232066f2d726b98757e11"
+      }
+    }
   ]
 }
