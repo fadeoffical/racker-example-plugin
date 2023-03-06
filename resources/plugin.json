@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "name": "racker-example-plugin",
+    "version": "1.0.0",
+    "description": "A simple example of a plugin",
+    "authors": [
+      {
+        "name": "fade",
+        "email": "truefadeoffical@gmail.com"
+      }
+    ]
+  },
+  "bin": "bin/racker-example-plugin.so"
+}

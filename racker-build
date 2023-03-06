@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+RACKER_TARGET_DIR="${RACKER_TARGET_DIR:-target/racker}"
+RACKER_PLUGIN_NAME="${RACKER_PLUGIN_NAME:-racker-example-plugin}"
+RACKER_PLUGIN_NAME_SNAKE_CASE="${RACKER_PLUGIN_NAME//-/_}"
+
+echo "[racker]: Build::target_dir = $RACKER_TARGET_DIR"
+echo "[racker]: Build::plugin_name = $RACKER_PLUGIN_NAME"
+
+# Create the target directory if not exists
+if [ ! -d "$RACKER_TARGET_DIR" ]; then
+  echo -n "[racker]: Build::target_dir does not exist, creating... "
+  mkdir -p "$RACKER_TARGET_DIR"
+  echo "OK"
+fi
+
+# Build the project
+echo -n "[racker]: Build::build_plugin... "
+cargo build --release --package "$RACKER_PLUGIN_NAME" &> /dev/null
+echo "OK"
+
+# Copy the binary to the target directory
+echo -n "[racker]: Build::copy_plugin... "
+cp "target/release/lib$RACKER_PLUGIN_NAME_SNAKE_CASE.so" "target/racker/"
+echo "OK"
+
+# Copy resources to the target directory
+echo -n "[racker]: Build::copy_resources... "
+cp -r "resources" "target/racker/"
+echo "OK"
+
+# Zip the target directory
+echo -n "[racker]: Build::zip_plugin... "
+zip -r "target/plugin.zip" "target/racker/" > /dev/null
+echo "OK"
