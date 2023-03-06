@@ -3,6 +3,7 @@
   "version": "0.0.1+develop",
   "description": "A simple example of a plugin",
   "license": "MIT",
+  "repository": "https://github.com/fadeoffical/racker-example-plugin",
   "authors": [
     {
       "name": "fade",
