@@ -31,5 +31,5 @@ echo "OK"
 
 # Zip the target directory
 echo -n "[racker]: Build::zip_plugin... "
-zip -r "target/plugin.zip" "target/racker/" > /dev/null
+zip -r "target/$RACKER_PLUGIN_NAME.zip" "target/racker/" > /dev/null
 echo "OK"
