@@ -14,9 +14,25 @@ if [ ! -d "$RACKER_TARGET_DIR" ]; then
   echo "OK"
 fi
 
+# Clean the target directory
+echo -n "[racker]: Build::clean... "
+rm -f "$RACKER_TARGET_DIR/*" &> /dev/null
+echo "OK"
+
 # Build the project
 echo -n "[racker]: Build::build_plugin... "
 cargo build --release --package "$RACKER_PLUGIN_NAME" &> /dev/null
+echo "OK"
+
+# Copy the plugin manifest to the target directory
+echo -n "[racker]: Build::copy_manifest... "
+cp "resources/plugin.json" "target/racker/"
+echo "OK"
+
+# Copy resources to the target directory
+echo -n "[racker]: Build::copy_resources... "
+cp -r "resources" "target/racker/resources"
+rm "target/racker/resources/plugin.json"
 echo "OK"
 
 # Copy the binary to the target directory
@@ -24,12 +40,8 @@ echo -n "[racker]: Build::copy_plugin... "
 cp "target/release/lib$RACKER_PLUGIN_NAME_SNAKE_CASE.so" "target/racker/"
 echo "OK"
 
-# Copy resources to the target directory
-echo -n "[racker]: Build::copy_resources... "
-cp -r "resources" "target/racker/"
-echo "OK"
 
 # Zip the target directory
 echo -n "[racker]: Build::zip_plugin... "
-zip -r "target/$RACKER_PLUGIN_NAME.zip" "target/racker/" > /dev/null
+zip -r -j "target/$RACKER_PLUGIN_NAME.zip" "target/racker/" > /dev/null
 echo "OK"

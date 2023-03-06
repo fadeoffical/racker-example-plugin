@@ -1,14 +1,16 @@
 {
-  "meta": {
-    "name": "racker-example-plugin",
-    "version": "1.0.0",
-    "description": "A simple example of a plugin",
-    "authors": [
-      {
-        "name": "fade",
-        "email": "truefadeoffical@gmail.com"
+  "name": "racker-example-plugin",
+  "version": "0.0.1+develop",
+  "description": "A simple example of a plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "fade",
+      "email": "truefadeoffical@gmail.com",
+      "socials": {
+        "github": "fadeoffical",
+        "discord": "fade#1298"
       }
-    ]
-  },
-  "bin": "bin/racker-example-plugin.so"
+    }
+  ]
 }

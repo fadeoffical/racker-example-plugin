@@ -10,5 +10,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 racker = { git = "https://github.com/fadeoffical/racker.git", branch = "develop" }
-
 log = "0.4"
